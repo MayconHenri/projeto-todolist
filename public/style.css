@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1e1e1e;
+  height: 100vh;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+}
+
+#container {
+  max-width: 588px;
+  margin: 100px auto 0;
+  padding: 0 24px;
+}
+
+/* header */
+header {
+  margin: 100px 30px auto 30px;
+  justify-content: center;
+  align-items: center;
+}
+#title-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6366f1;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+#title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 21px auto 0;
+  font-weight: 600;
+  font-size: 32px;
+  color: white;
+}
+.input-text {
+  display: flex;
+  width: 100%px;
+  margin: 44px auto 0;
+}
+
+#new-nota {
+  background-color: #27272c;
+  border: 1px solid #71717a;
+  border-radius: 3px;
+  height: 28px;
+  text-align: left;
+
+  width: 100%;
+}
+
+#add-nota p {
+  display: inline;
+  color: #9ca3af;
+  width: 46px;
+  font-size: 13px;
+}
+#add-nota button {
+  font-size: 16px;
+  color: white;
+  height: 38px;
+  background-color: #6366f1;
+  border: 0px;
+  font-weight: 500;
+  padding: 9px 17px 10px 18px;
+  border-radius: 3px;
+}
+#add-nota {
+  text-align: right;
+  margin-top: 23px;
+  gap: 20px;
+}
+
+/* main */
+
+main {
+  margin: 51px 30px auto 30px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #27272c;
+  background-color: #27272c;
+  border-radius: 10px 5px 15px 20px;
+}
+
+#txt-notas {
+  color: white;
+  padding: 27px 25px 20px 28px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  margin: 0 16px 13px 0;
+  gap: 10px;
+}
+#buton_excluir,
+#buton_editar {
+  background-color: #1d1d20;
+  color: #bbbbbc;
+  border: 0px;
+  width: 81px;
+  height: 34px;
+}
+
+/* footer */
+
+footer {
+  margin-top: 100px;
+  color: #71717a;
+  font-size: 12px;
+  margin: 100px 30px 32px 30px;
+  justify-content: center;
+  align-items: center;
+}

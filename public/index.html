@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <header id="header">
+        <h3 id="title-2">SALVE SUAS IDEIAS COM NOTAS ONLINE</h3>
+        <h1 id="title">guardanotas ✍️</h1>
+        <div class="input-text">
+          <input
+            type="text"
+            name="new-nota"
+            id="new-nota"
+            placeholder="Escreva uma nova nota..."
+          />
+        </div>
+
+        <div id="add-nota">
+          <p>0/200</p>
+          <button onclick="adicionar()">Adicionar</button>
+        </div>
+      </header>
+
+      <main>
+        <div>
+          <div id="txt-notas">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+              accusamus, et cumque facere asperiores nam nisi doloribus ipsum
+              dicta eveniet officiis perspiciatis qui dolor modi reprehenderit.
+              Molestiae quo debitis sunt.
+            </p>
+          </div>
+          <div id="buttons">
+            <button id="buton_editar" onclick="editar()">Editar</button>
+            <button id="buton_excluir" onclick="excluir()">Excluir</button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Reprehenderit impedit doloribus quaerat molestias facilis eveniet
+          molestiae. Illo, quibusdam ad, placeat delectus rerum pariatur
+          molestiae omnis laboriosam exercitationem repudiandae iure ipsum.
+        </p>
+      </footer>
+    </div>
+    <script src="./script..js"></script>
+  </body>
+</html>
