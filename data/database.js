@@ -46,4 +46,15 @@ export class Database {
       this.#persiste();
     }
   }
+
+  async update(table, id, newData) {
+    const rowIndex = this.#database[table].findIndex(row => row.id === id);
+
+    if (rowIndex > -1) {
+      this.#database[table][rowIndex] = { id, ...newData };
+      this.#persiste();
+      return { id, ...newData };
+    }
+    return null;
+  }
 }

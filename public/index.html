@@ -18,33 +18,30 @@
         <h3 id="title-2">SALVE SUAS IDEIAS COM NOTAS ONLINE</h3>
         <h1 id="title">guardanotas ✍️</h1>
         <div class="input-text">
-          <input
-            type="text"
-            name="new-nota"
-            id="new-nota"
-            placeholder="Escreva uma nova nota..."
-          />
+          <textarea id="new-nota" name="story" rows="15" cols="33" placeholder="Escreva uma nova nota..."></textarea>
         </div>
 
         <div id="add-nota">
-          <p>0/200</p>
+          <span id="char-count">0/200</span>
           <button onclick="adicionar()">Adicionar</button>
         </div>
       </header>
 
       <main>
-        <div>
-          <div id="txt-notas">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-              accusamus, et cumque facere asperiores nam nisi doloribus ipsum
-              dicta eveniet officiis perspiciatis qui dolor modi reprehenderit.
-              Molestiae quo debitis sunt.
-            </p>
-          </div>
-          <div id="buttons">
-            <button id="buton_editar" onclick="editar()">Editar</button>
-            <button id="buton_excluir" onclick="excluir()">Excluir</button>
+        <div id="TODOS-CARDS">
+          <div class="card-cotainers">
+            <div class="card-modelo">
+              <div class="txt-notas">
+                <p>
+                </p>
+              </div>
+              <div class="buttons">
+                <button class="buton_editar" onclick="editar()">Editar</button>
+                <button class="buton_excluir" onclick="excluir()">
+                  Excluir
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -58,5 +55,5 @@
       </footer>
     </div>
     <script src="./script..js"></script>
-    </body>
+  </body>
 </html>
