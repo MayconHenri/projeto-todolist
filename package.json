@@ -2,11 +2,14 @@
   "name": "meu-projeto",
   "version": "1.0.0",
   "description": "todo list",
-  "main": "index.js",
-  "devDependencies": {},
+  "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch src/server/server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
