@@ -150,6 +150,3 @@ document.getElementById("new-nota").addEventListener("input", atualizarContagem)
 
 // Chame esta função para carregar as notas ao carregar a página
 carregarNotas()
-
-// Adicionar evento de input para atualizar a contagem em tempo real
-document.getElementById("new-nota").addEventListener("input", atualizarContagem)

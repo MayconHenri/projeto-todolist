@@ -1,8 +1,11 @@
+/* Reset de estilos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Estilos do corpo da página */
 body {
   background-color: #1e1e1e;
   height: 100vh;
@@ -12,19 +15,23 @@ body * {
   font-family: "Inter", sans-serif;
 }
 
+/* Contêiner principal */
 #container {
   max-width: 588px;
   margin: 100px auto 0;
   padding: 0 24px;
+  min-height: 100vh;
 }
 
-/* header */
+/* Estilos do cabeçalho (header) */
 header {
   margin: 100px 30px auto 30px;
   justify-content: center;
   align-items: center;
 }
-#title-2 {
+
+#title-2,
+#title {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,17 +41,15 @@ header {
 }
 
 #title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 21px auto 0;
   font-weight: 600;
   font-size: 32px;
   color: white;
 }
+
 .input-text {
   display: flex;
-  width: 100%px;
+  width: 100%;
   margin: 44px auto 0;
 }
 
@@ -68,7 +73,9 @@ header {
   width: 46px;
   font-size: 13px;
 }
+
 #add-nota button {
+  width: 120px;
   font-size: 16px;
   color: white;
   height: 38px;
@@ -78,22 +85,26 @@ header {
   padding: 9px 17px 10px 18px;
   border-radius: 3px;
 }
+
 #add-nota {
   text-align: right;
   margin-top: 23px;
   gap: 20px;
 }
 
-/* main */
-
+/* Estilos do conteúdo principal (main) */
 main {
   margin: 51px 30px auto 30px;
   justify-content: center;
   align-items: center;
+  min-height: 300px; /* Altura mínima de 300 pixels, ajuste conforme necessário */
 }
 
 .card-cotainers {
   border-radius: 10px 5px 15px 20px;
+  width: 100%; /* Ajuste a largura conforme necessário */
+  margin-bottom: 20px;
+  min-height: 150px;
 }
 
 .txt-notas {
@@ -101,7 +112,7 @@ main {
   padding: 27px 25px 20px 28px;
   background-color: #27272c;
   border-radius: 10px 0px 0px 0px;
-  height: 120px;
+  min-height: 120px;
 }
 
 .buttons {
@@ -114,6 +125,7 @@ main {
   background-color: #27272c;
   border-radius: 0px 0px 10px 0px;
 }
+
 .buton_excluir,
 .buton_editar {
   background-color: #1d1d20;
@@ -123,44 +135,22 @@ main {
   height: 34px;
 }
 
-/* footer */
-
+/* Estilos do rodapé (footer) */
 footer {
   margin-top: 100px;
   color: #71717a;
-  font-size: 12px;
+  font-size: 13px;
   margin: 100px 30px 32px 30px;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
-.card-cotainers-nova {
-  border-radius: 10px 5px 15px 20px;
-}
-
-.txt-notas-nova {
+footer a {
+  text-decoration: none;
   color: white;
-  padding: 27px 25px 20px 28px;
-  background-color: #27272c;
-  border-radius: 10px 0px 0px 0px;
-  height: 120px;
+  padding: 0 0 5px 0;
 }
 
-.buttons-nova {
-  display: flex;
-  justify-content: right;
-  align-items: right;
-  margin: 0 0px 13px 0;
-  padding: 0 16px 20px 0;
-  gap: 10px;
-  background-color: #27272c;
-  border-radius: 0px 0px 10px 0px;
+#insta {
+  font-size: 20px;
 }
-.buton_excluir-nova,
-.buton_editar-nova {
-  background-color: #1d1d20;
-  color: #bbbbbc;
-  border: 0px;
-  width: 81px;
-  height: 34px;
-}
+
