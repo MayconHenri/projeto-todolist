@@ -15,37 +15,64 @@ async function carregarNotas() {
     const response = await fetch(`http://localhost:${porta}/api/notes`)
     const notas = await response.json()
 
-    const cardContainer = document.getElementById("TODOS-CARDS")
+    const cardContainer = document.querySelector('main')
     cardContainer.innerHTML = ""
 
     notas.forEach((nota) => {
       const newNoteDiv = document.createElement("div")
-      newNoteDiv.className = "card-modelo"
+      newNoteDiv.className = "card"
 
-      const newNoteContent = document.createElement("div")
-      newNoteContent.className = "txt-notas"
+      const newNoteContent = document.createElement("p")
       newNoteContent.innerHTML = `<p>${nota.text}</p>`
 
       const buttonsDiv = document.createElement("div")
-      buttonsDiv.className = "buttons"
+      buttonsDiv.className = "button"
 
       const editarButton = document.createElement("button")
       editarButton.className = "buton_editar"
       editarButton.textContent = "Editar"
-      editarButton.addEventListener("click", () => {
-        const newText = prompt("Digite o novo texto:")
-        if (newText !== null) {
-          editar(nota.id, newText)
-        }
+      editarButton.addEventListener("click", async () => {
+        const text = await getNoteById(nota.id)
+        // const newText = prompt("Digite o novo texto:")
+        // if (newText !== null) {
+        //   editar(nota.id, newText)}
+        let textlength = text.text.length
+        let editdialog = xdialog.create({
+          title: "Edite sua nota",
+          body: `<textarea id="nota-editada" maxlength="200">${text.text}</textarea>`,
+          onok: function () {
+            const text_new_editada =
+              document.getElementById("nota-editada").value
+            console.log(text_new_editada)
+            editar(nota.id, text_new_editada)
+            editdialog.hide()
+          },
+          oncancel: function () {
+            editdialog.hide()
+          },
+        })
+        editdialog.show()
       })
 
       const excluirButton = document.createElement("button")
       excluirButton.className = "buton_excluir"
       excluirButton.textContent = "Excluir"
       excluirButton.addEventListener("click", () => {
-        if (confirm("Tem certeza que deseja excluir esta nota?")) {
-          excluir(nota.id)
-        }
+        // if (confirm("Tem certeza que deseja excluir esta nota?")) {
+        //   excluir(nota.id)
+        // }
+        let excluirdialog = xdialog.create({
+          title: "Exclusão de notas",
+          body: `Deseja excluir sua nota?`,
+          onok: function () {
+            excluir(nota.id)
+            excluirdialog.hide()
+          },
+          oncancel: function () {
+            excluirdialog.hide()
+          },
+        })
+        excluirdialog.show()
       })
 
       buttonsDiv.appendChild(editarButton)
@@ -59,6 +86,24 @@ async function carregarNotas() {
   } catch (error) {
     console.error("Erro ao carregar as notas:", error)
   }
+}
+
+// async function count() {
+//   const text = await document.getElementById("nota-editada")
+//   text.addEventListener("input", function () {
+//     const tam = this.value.length
+//     if(tam){
+//       return tam
+//     }
+//     return 1
+//   })
+// }
+
+async function getNoteById(id) {
+  const response = await fetch(`http://localhost:${porta}/api/notes/${id}`)
+  const nota = await response.json()
+
+  return nota
 }
 
 // Função para adicionar uma nova nota
@@ -118,7 +163,7 @@ async function editar(id, newText) {
       )
       const updatedNote = await response.json()
       console.log("Nota editada:", updatedNote)
-    } else{
+    } else {
       window.alert("[ERRO] A quantidade de caracter é maior que 200!")
     }
   } catch (error) {

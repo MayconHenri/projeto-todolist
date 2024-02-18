@@ -57,13 +57,14 @@ header {
   background-color: #27272c;
   border: 1px solid #71717a;
   border-radius: 3px;
-  height: 70px;
+  height: 105px;
   text-align: left;
   width: 100%;
   resize: none;
+  padding: 10px;
 }
 
-#new-nota:focus {
+#new-nota:enabled {
   color: white;
 }
 
@@ -84,6 +85,7 @@ header {
   font-weight: 500;
   padding: 9px 17px 10px 18px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 #add-nota {
@@ -100,48 +102,54 @@ main {
   min-height: 300px; /* Altura mínima de 300 pixels, ajuste conforme necessário */
 }
 
-.card-cotainers {
-  border-radius: 10px 5px 15px 20px;
-  width: 100%; /* Ajuste a largura conforme necessário */
-  margin-bottom: 20px;
-  min-height: 150px;
-}
-
-.txt-notas {
-  color: white;
-  padding: 27px 25px 20px 28px;
-  background-color: #27272c;
-  border-radius: 10px 0px 0px 0px;
-  min-height: 120px;
-}
-
-.buttons {
+.card-container {
+  margin-top: 51px;
   display: flex;
-  justify-content: right;
-  align-items: right;
-  margin: 0 0px 13px 0;
-  padding: 0 16px 20px 0;
-  gap: 10px;
-  background-color: #27272c;
-  border-radius: 0px 0px 10px 0px;
 }
-
-.buton_excluir,
-.buton_editar {
-  background-color: #1d1d20;
-  color: #bbbbbc;
-  border: 0px;
+.card {
+  background-color: #27272c;
+  border-radius: 17px;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 13px;
+}
+.card p {
+  margin: auto;
+  color: white;
+  min-height: 80px;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 11px;
+  margin-top: 10px;
+}
+.card button {
   width: 81px;
   height: 34px;
+  background: #1d1d20;
+  border-radius: 2px;
+  text-align: center;
+  color: #bbbbbc;
+  border: none;
+  cursor: pointer;
+}
+#nota-editada{
+  border-radius: 3px;
+  height: 105px;
+  text-align: left;
+  width: 100%;
+  resize: none;
+  padding: 10px;
 }
 
 /* Estilos do rodapé (footer) */
 footer {
-  margin-top: 100px;
   color: #71717a;
   font-size: 13px;
-  margin: 100px 30px 32px 30px;
   text-align: center;
+  padding: 0 0 10px 0;
 }
 
 footer a {
@@ -154,3 +162,55 @@ footer a {
   font-size: 20px;
 }
 
+/* tablet */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  #title {
+    font-size: 80px;
+  }
+  #container {
+    margin: 50px 77px 0;
+    max-width: 768px;
+  }
+  main {
+    margin: 51px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  #new-nota {
+    height: 70px;
+  }
+
+  .card {
+    width: calc(50% - 26px);
+  }
+  .card p{
+    min-height: 100px;
+  }
+}
+
+/* desktop */
+@media only screen and (min-width: 1025px) {
+  #title {
+    font-size: 80px;
+  }
+  #container {
+    margin: 100px 141px 0;
+    max-width: 1024px;
+  }
+  #new-nota {
+    height: 60px;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .card {
+    width: calc(25% - 26px);
+  }
+  .card p{
+    min-height: 200px;
+  }
+}

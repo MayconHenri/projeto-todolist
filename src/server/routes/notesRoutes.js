@@ -59,4 +59,18 @@ router.put("/api/notes/:id", async (req, res) => {
 });
 
 
+router.get("/api/notes/:id", async (req, res) => {
+  try {
+    const noteId = req.params.id;
+    const updatedNote = await database.getbyID("notes", noteId);
+    res.json(updatedNote);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erro ao editar a nota");
+  }
+});
+
+
+
+
 export { router as notesRoutes }

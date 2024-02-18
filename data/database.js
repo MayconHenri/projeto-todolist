@@ -47,6 +47,13 @@ export class Database {
     }
   }
 
+  getbyID(table, id) {
+    const rowIndex = this.#database[table].findIndex(row => row.id === id);
+    const textGET = this.#database[table][rowIndex]
+
+    return {text: textGET["text"] } 
+  }
+
   async update(table, id, newData) {
     const rowIndex = this.#database[table].findIndex(row => row.id === id);
 
